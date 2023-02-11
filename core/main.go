@@ -14,9 +14,14 @@ func main() {
 	fmt.Println("==--==--==--==--==--==--==--==--==")
 	fmt.Println("==--==--==--==--==--==--==--==--==")
 	var ingreso string
-	fmt.Print("ingresar dato: ")
-	fmt.Scanf("%s", &ingreso)
-	fmt.Println(ingreso)
-	objeto.GenerarTopicos(ingreso)
+	var topicos []string
+	i := 0
+	for i < 2 {
+		fmt.Println("ingresar dato: ")
+		fmt.Scanf("%s", &ingreso)
+		topicos = append(topicos, ingreso)
+		i++
+	}
+	objeto.GenerarTopicos(topicos)
 	random.GenerarObjetoRandom()
 }
