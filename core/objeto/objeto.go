@@ -2,7 +2,8 @@ package objeto
 
 import "fmt"
 
-func TraerObjetos() {
-	var algo string = "algo"
-	fmt.Printf("raul portal es %v \n", algo)
+func GenerarTopicos(ingresado string) {
+	fmt.Printf("Dato ingresado: %v", ingresado)
+	// var topicos []string
+
 }

@@ -8,7 +8,15 @@ import (
 )
 
 func main() {
-	fmt.Println("asd")
-	random.Saluda()
-	objeto.TraerObjetos()
+	fmt.Println("==--==--==--==--==--==--==--==--==")
+	fmt.Println("==--==--==--==--==--==--==--==--==")
+	fmt.Println("Inicia Randomizador de Peliculas")
+	fmt.Println("==--==--==--==--==--==--==--==--==")
+	fmt.Println("==--==--==--==--==--==--==--==--==")
+	var ingreso string
+	fmt.Print("ingresar dato: ")
+	fmt.Scanf("%s", &ingreso)
+	fmt.Println(ingreso)
+	objeto.GenerarTopicos(ingreso)
+	random.GenerarObjetoRandom()
 }
