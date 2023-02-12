@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/4ndroid3/random_movie_genre/guardado"
 	"github.com/4ndroid3/random_movie_genre/objeto"
 	"github.com/4ndroid3/random_movie_genre/random"
 )
@@ -38,7 +39,10 @@ func main() {
 			fmt.Scanf("%s", &i)
 		}
 	}
-	objeto.GenerarTopicos(topicos)
 
+	// Funcion para guardar la lista de topicos en un archivo .txt
+
+	objeto.GenerarTopicos(topicos)
+	guardado.GuardarTopicos(topicos)
 	random.GenerarObjetoRandom(topicos)
 }
