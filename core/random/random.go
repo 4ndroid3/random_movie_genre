@@ -1,8 +1,11 @@
 package random
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
-func GenerarObjetoRandom() {
-	fmt.Println("Devuelve Palabra random")
-
+func GenerarObjetoRandom(topicos []string) {
+	topicoRandom := rand.Intn(len(topicos))
+	fmt.Printf("El Topico Elegido Aleatoriamente es: %v \n", topicos[topicoRandom])
 }

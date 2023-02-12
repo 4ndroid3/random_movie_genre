@@ -7,3 +7,8 @@ func GenerarTopicos(ingresado []string) []string {
 
 	return ingresado
 }
+
+func AgregaTopico(topico string) string {
+	fmt.Printf("Dato ingresado: %v \n \n", topico)
+	return topico
+}
