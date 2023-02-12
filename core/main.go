@@ -20,7 +20,7 @@ func main() {
 	// agregar una variable tipo slice con 5 nombres de topicos
 	topicos := []string{"accion", "comedia", "drama", "terror", "romance"}
 
-	i := "si"
+	i := "no"
 
 	/*Realiza un bucle while do
 	preguntando el valor a ingresa y luego
@@ -31,12 +31,12 @@ func main() {
 				break
 			}
 			fmt.Println("ingresar dato: ")
-			fmt.Scanf("%s", &ingreso)
+			// fmt.Scanf("%s", &ingreso)
 
 			topicos = append(topicos, objeto.AgregaTopico(ingreso))
 
 			fmt.Println("Desea Ingresar otro dato mas?: ")
-			fmt.Scanf("%s", &i)
+			// fmt.Scanf("%s", &i)
 		}
 	}
 
