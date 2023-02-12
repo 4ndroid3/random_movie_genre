@@ -1,0 +1,7 @@
+accion
+comedia
+drama
+terror
+romance
+fantasia
+Pastalone
