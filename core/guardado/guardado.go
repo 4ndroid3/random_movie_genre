@@ -3,6 +3,8 @@ package guardado
 import (
 	"fmt"
 	"os"
+
+	"github.com/4ndroid3/random_movie_genre/objeto"
 )
 
 func GuardarTopicos(listaTopicos []string) {
@@ -27,4 +29,38 @@ func GuardarTopicos(listaTopicos []string) {
 			}
 		}
 	}
+}
+
+/*
+Pregunta al usuario si desea ingresar datos,
+luego permite ingresar el topico a guardar.
+*/
+func IngresoDeDatos(topicosLeidos []string) []string {
+	i := "si"
+	var ingreso string
+
+	i = preguntaSiContinua()
+
+	for {
+		{
+			if i == "no" || i == "No" || i == "NO" || i == "nO" {
+				break
+			}
+			fmt.Println("ingresar dato: ")
+			fmt.Scanf("%s", &ingreso)
+
+			topicosLeidos = append(topicosLeidos, objeto.AgregaTopico(ingreso))
+
+			i = preguntaSiContinua()
+		}
+	}
+
+	return topicosLeidos
+}
+
+func preguntaSiContinua() string {
+	var i string
+	fmt.Println("Desea Ingresar otro dato mas?: ")
+	fmt.Scanf("%s", &i)
+	return i
 }
