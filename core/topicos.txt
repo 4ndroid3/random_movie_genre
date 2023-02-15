@@ -1,14 +1,26 @@
-accion
-comedia
-drama
-terror
-romance
-fantasia
-Pastalone
-PastaLone
-Pasta
-Corholio
-pasta
-Python
-pasoi
-oslsiopo
+Pelis de disney en ingles
+Peli de jim carrey
+Peli de brad
+Peli de leo
+Peli ganadora de un oscar
+Peli de terror
+Peli romantica
+Peli romantica
+Peli comedia
+Peli Ciencia Ficcion
+Peli suspenso
+Peli drama
+Peli HP
+Peli marvel
+Thriller
+Peli habla hispana
+Peli asiatica
+Peli para llorar
+Clásico del cine
+Peli 80s
+Peli 90s
+2000s
+Peli Meryl Streep
+Fantasía
+Basada en un libro
+Peli De Niro
