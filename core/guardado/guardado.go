@@ -7,25 +7,27 @@ import (
 	"github.com/4ndroid3/random_movie_genre/objeto"
 )
 
+/*
+Lee el archivo topicos.txt y guarda los datos en un slice de strings.
+*/
 func GuardarTopicos(listaTopicos []string) {
-	fmt.Println("Guardando datos en archivo .txt")
-	filename := "topicos.txt"
-	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
+	filename := "topicos.txt"        // especificamos el nombre del archivo
+	file, err := os.Create(filename) // creamos el archivo
 	if err != nil {
-		panic(err)
+		panic(err) // si ocurre un error al crear el archivo, lo mostramos y salimos de la función
 	}
-	defer file.Close()
+	defer file.Close() // aseguramos que se cierre el archivo al final de la función, incluso si ocurre un error
 
-	for i, tema := range listaTopicos {
-		_, err := file.WriteString(tema)
+	for i, tema := range listaTopicos { // recorremos la lista de temas
+		_, err := fmt.Fprint(file, tema) // escribimos el tema en el archivo
 		if err != nil {
-			panic(err)
+			panic(err) // si ocurre un error al escribir en el archivo, lo mostramos y salimos de la función
 		}
 
-		if i < len(listaTopicos)-1 {
-			_, err := file.WriteString("\n")
+		if i < len(listaTopicos)-1 { // si no es el último tema, escribimos una nueva línea para separarlo del siguiente tema
+			_, err := fmt.Fprintln(file) // escribimos una nueva línea en el archivo
 			if err != nil {
-				panic(err)
+				panic(err) // si ocurre un error al escribir en el archivo, lo mostramos y salimos de la función
 			}
 		}
 	}
@@ -36,31 +38,22 @@ Pregunta al usuario si desea ingresar datos,
 luego permite ingresar el topico a guardar.
 */
 func IngresoDeDatos(topicosLeidos []string) []string {
-	i := "si"
-	var ingreso string
-
-	i = preguntaSiContinua()
-
 	for {
-		{
-			if i == "no" || i == "No" || i == "NO" || i == "nO" {
-				break
-			}
-			fmt.Println("ingresar dato: ")
-			fmt.Scanf("%s", &ingreso)
-
-			topicosLeidos = append(topicosLeidos, objeto.AgregaTopico(ingreso))
-
-			i = preguntaSiContinua()
+		respuesta := preguntaSiContinua()
+		if respuesta == "no" || respuesta == "n" {
+			break
 		}
+		fmt.Print("Ingresar dato: ")
+		var ingreso string
+		fmt.Scanln(&ingreso)
+		topicosLeidos = append(topicosLeidos, objeto.AgregaTopico(ingreso))
 	}
-
 	return topicosLeidos
 }
 
 func preguntaSiContinua() string {
-	var i string
-	fmt.Println("Desea Ingresar otro dato mas?: ")
-	fmt.Scanf("%s", &i)
-	return i
+	fmt.Print("¿Desea ingresar otro dato? (s/n): ")
+	var respuesta string
+	fmt.Scanln(&respuesta)
+	return respuesta
 }
