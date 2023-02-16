@@ -46,13 +46,13 @@ func IngresoDeDatos(topicosLeidos []string) []string {
 		fmt.Print("Ingresar dato: ")
 		var ingreso string
 		fmt.Scanln(&ingreso)
-		topicosLeidos = append(topicosLeidos, objeto.AgregaTopico(ingreso))
+		topicosLeidos = append(topicosLeidos, objeto.AgregaTopico(ingreso).Nombre)
 	}
 	return topicosLeidos
 }
 
 func preguntaSiContinua() string {
-	fmt.Print("¿Desea ingresar otro dato? (s/n): ")
+	fmt.Print("¿Desea ingresar otro dato? (si/no): ")
 	var respuesta string
 	fmt.Scanln(&respuesta)
 	return respuesta
